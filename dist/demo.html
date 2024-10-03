@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>xiangqiboardjs.com » Examples</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Roboto+Mono">
+    <link rel="stylesheet" href="https://lengyanyu258.github.io/xiangqiboardjs/css/website.css">
+    <link rel="stylesheet" href="https://lengyanyu258.github.io/xiangqiboardjs/css/xiangqiboard.min.css">
+
+    <script src="https://lengyanyu258.github.io/xiangqiboardjs/js/jquery.min.js"></script>
+<script src="https://lengyanyu258.github.io/xiangqiboardjs/js/prettify.min.js"></script>
+<script src="https://lengyanyu258.github.io/xiangqiboardjs/js/xiangqiboard.min.js"></script>
+<script src="https://lengyanyu258.github.io/xiangqiboardjs/js/xiangqi-0.3.1-dev.min.js"></script>
+<script src="https://lengyanyu258.github.io/xiangqiboardjs/js/examples.js"></script>
+
+
+</head>
+<body>
+    <div id="myBoard" style="width: 450px"></div>
+    <button id="moveRandom">Move Random</button>
+    <script>
+function onChange (oldPos, newPos) {
+  console.log('Position changed:',oldPos,newPos);
+  console.log('Old position: ' + Xiangqiboard.objToFen(oldPos));
+  console.log('New position: ' + Xiangqiboard.objToFen(newPos));
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+}
+
+const config = {
+    draggable: true,
+    position: 'start',
+    onChange:onChange,
+};
+const board = Xiangqiboard('myBoard', config);
+
+document.getElementById("moveRandom").addEventListener("click",function(){
+    board.move("e0-e1")
+})
+    </script>
+</body>
+</html>
