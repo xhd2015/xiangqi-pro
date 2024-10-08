@@ -1,18 +1,18 @@
-import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
+import { ChessLayoutDemo } from './page/ChessBoardDemo';
+import { ChessBoardStepDemo } from './page/ChessBoardStepDemo';
+import { StepDemo } from './page/StepDemo';
 import { XiangqiJSChess } from './page/XiangqiJSChess';
-import { Chess } from './page/Chess';
-
 
 export default () => {
-    // console.log("params:", env.showInternalMenu, params, [...params.keys()])
-
     return <BrowserRouter>
         <Routes>
-
             <Route path="/" element={<Layout />}>
-                <Route path="chess" element={<Chess />}></Route>
-                <Route path="chess/xiangqijs" element={<XiangqiJSChess />}></Route>
+                <Route path="demo/chess" element={<ChessLayoutDemo />}></Route>
+                <Route path="demo/step" element={<StepDemo />} />
+                <Route path="demo/chessStep" element={<ChessBoardStepDemo />} />
+                <Route path="demo/chess/xiangqijs" element={<XiangqiJSChess />}></Route>
 
                 <Route
                     path="*"
@@ -26,5 +26,3 @@ export default () => {
         </Routes>
     </BrowserRouter >
 }
-
-

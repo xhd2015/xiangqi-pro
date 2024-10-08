@@ -5,7 +5,7 @@ A pure css implementation of the Chinese Chess, Xiangqi.
 
 This library provides basic layout and move APIs of the chess map.
 
-The core functionality is to provide UI drawings, so chess rules are not enforced.
+The core functionality is to provide UI drawings, and other optional chess rules can also be enforced if needed.
 
 # Usage
 ```sh
@@ -22,5 +22,5 @@ npm run server
 The open http://localhost:8080/chess to check the UI.
 
 # Disclaimer
-Credit should be given to https://github.com/leidZhang/JSXiangqi, on which this project is based.
+Inspired by https://github.com/leidZhang/JSXiangqi.
 
